@@ -1,0 +1,39 @@
+<%- include ('partials/header.ejs') %>
+<body>
+    <%- include('partials/navbar.ejs') %>
+    <div class="container">
+        <div class="card" id="cadastro-disciplina">
+            <div class="card-header">
+                <h3>Cadastrar Disciplina</h3>
+            </div>
+            <div class="card-body">
+                <form method="POST" action="/salvar/disciplina" id="formDisciplina">
+                    <label for="nomeDisciplina">Nome da Disciplina</label>
+                    <input id="nomeDisciplina" type="text" placeholder="Nome da Disciplina" class="form-control" name="nomeDisciplina" required>
+                    <small id="erroNomeD" class="form-text text-danger"></small>
+                    <br>
+                    <label for="codigo">Código da disciplina</label>
+                    <input id="codigo" type="number" placeholder="código da disciplina deve conter 3 digitos" class="form-control" name="codigo" required>
+                    <small id="erroCodigo" class="form-text text-danger"></small>
+                    <br>
+                    <label for="professor">Nome do Professor</label>
+                    <input id="professor" type="text" placeholder="Nome do professor" class="form-control" name="professor" required>
+                    <small id="erroProfessor" class="form-text text-danger"></small>
+                    <br>
+                    <label for="turmaCodigo">Turma</label>
+                    <input id="turmaCodigo" type="number" placeholder="Código da turma deve conter entre 4 e 6 digitos" class="form-control" name="turmaCodigo" required>
+                    <small id="erroTurmaC" class="form-text text-danger"></small>
+                    <br>
+                    <button type="submit" class="btn btn-success">Salvar</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    
+     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+     <script src="/js/Validation.js"></script>
+
+
+
+</body>
+<%- include('partials/footer.ejs') %>

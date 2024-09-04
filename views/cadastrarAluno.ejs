@@ -1,0 +1,40 @@
+    <%- include ('partials/header.ejs') %>
+    <body>
+        <%- include ('partials/navbar.ejs') %>
+        <div class="container">
+            <div class="card" id="cadastro-aluno">
+                <div class="card-header">
+                    <h3>Cadastrar Aluno</h3>  
+                </div>
+                <div class="card-body">
+                    <form method="POST" action="/salvar/aluno" id="formAluno">
+                        <label for="nome">Nome completo</label>
+                        <input id="nome" type="text" placeholder="Digite seu nome completo" class="form-control" name="nome" required>
+                        <small id="erroNome" class="form-text text-danger"></small>
+                        <br>
+                        <label for="nascimento">Data de Nascimento</label>
+                        <input id="nascimento" type="date" class="input-group date form-control" name="nascimento" required>
+                        <small id="erroNascimento" class="form-text text-danger"></small>
+                        <br>
+                        <label for="matricula">Código da matricula</label>
+                        <input id="matricula" type="number" placeholder="Deve conter 8 dígitos " class="form-control" name="matricula" required>
+                        <small id="erroMatricula" class="form-text text-danger"></small>
+                        <br>
+                        <label for="turma">Código da turma</label>
+                        <input id="turma" type="number" placeholder="Conter de 4 a 6 digitos" class="form-control" name="turma" required>
+                        <small id="erroTurma" class="form-text text-danger"></small>
+                        <br>
+                        <button type="submit" class="btn btn-success">Salvar</button>
+                    </form>
+                </div>
+            </div>    
+        </div>      
+        <script  src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+
+        <script src="/js/Validation.js">
+            
+        </script>
+        
+    </body>
+
+    <%- include ('partials/footer.ejs') %>  

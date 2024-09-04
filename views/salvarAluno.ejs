@@ -1,0 +1,38 @@
+<%- include ('partials/header.ejs') %>
+<body>7
+    <%- include('partials/navbar.ejs') %>
+    <div class="container">
+        <div class="card" id="cadastro-disciplina">
+            <div class="card-header">
+                <h3>Estudante Cadastrado</h3>
+            </div>
+            <div class="card-body">
+                <form method="GET" action="">
+                    <table class="table table-bordered table-striped table-hover">
+                        <tr>
+                            <td class="card-body col-1">Nome: </td>
+                            <td class="card-body col-3"><%= aluno.nome %></td>
+                        </tr>
+                        <tr>
+                            <td class="card-body col-1">Data de Nascimento: </td>
+                            <td class="card-body col-3"><%= aluno.nascimento %></td>
+                        </tr>
+                        <tr>
+                            <td class="card-body col-1">Matricula: </td>
+                            <td class="card-body col-3"><%= aluno.matricula %></td>
+                        </tr>
+                        <tr>
+                            <td class="card-body col-1">Turma: </td>
+                            <td class="card-body col-3"><%= aluno.turma %></td>
+                        </tr>
+
+                    </table>
+                </form>
+            </div>
+        </div>
+    </div>  
+
+
+
+</body>
+<%- include('partials/footer.ejs') %>
