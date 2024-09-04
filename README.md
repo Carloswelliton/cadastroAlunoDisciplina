@@ -1,9 +1,14 @@
-Deve-se instalar as dependencias abaixo:
+Clone o repositório
+```bash
+git clone https://github.com/Carloswelliton/cadastroAlunoDisciplina.git
+```
+
+Instale todas as dependencias usando:
 ```bash
 npm install
 ```
 
-para subir a aplicação, no prompt de comando use:
+para subir a aplicação, no prompt de comando do VSC use:
 ```bash
 node --watch index.js
 ```

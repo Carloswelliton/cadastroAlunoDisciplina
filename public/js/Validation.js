@@ -65,19 +65,22 @@ $("#formDisciplina").on("submit", function(event){
             valid = false
     }
 
-    const codigo = $("#erroCodigo").val();
-    if(codigo < 3 || codigo > 3){
+    const codigo = $("#codigo").val();
+    if(codigo.length != 3 ){
         $("#erroCodigo").text("Código deve ser um número de 3 dígitos");
+        valid = false
     }
 
     const professor = $("#professor").val().trim();
     if(professor.length < 3){
         $("#erroProfessor").text("Nome do professor deve ter no mínimo 3 caracteres.")
+        valid = false
     }
 
     const cod_turma = $("#turmaCodigo").val();
-    if(cod_turma.length < 4 || cod_turma > 6){
+    if(cod_turma.length < 4 || cod_turma.length > 6){
         $("#erroTurmaC").text("deve ser um número com mais de 4 dígitos e menos de 6 dígitos.");
+        valid = false
     }
 
     if(valid == false){
