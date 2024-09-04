@@ -1,34 +1,80 @@
 <%- include ('partials/header.ejs') %>
 <body>
     <%- include('partials/navbar.ejs') %>
-    <div class="container">
-        <div class="card" id="cadastro-disciplina">
-            <div class="card-header">
-                <h3>Cadastrar Disciplina</h3>
+    <section class="vh-100" style="background-color: #eee;">
+        <hr>
+       
+        <div class="container h-100">
+          <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col-lg-12 col-xl-11">
+              <div class="card text-black" style="border-radius: 25px; background-color: #FBFCFD;">
+                <div class="card-body p-md-5">
+                  <div class="row justify-content-center">
+                    <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
+      
+                      <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Cadastrar Disciplina</p>
+      
+                      <form class="mx-1 mx-md-4" method="POST" action="/salvar/disciplina" id="formDisciplina">
+      
+                        <div class="d-flex flex-row align-items-center mb-4">
+                          <i class="fas fa-user fa-lg me-3 fa-fw"></i>
+                          <div data-mdb-input-init class="form-outline flex-fill mb-0">
+                            <input id="nomeDisciplina" type="text" placeholder="Nome da Disciplina" class="form-control" name="nomeDisciplina" required>
+                            <small id="erroNomeD" class="form-text text-danger"></small>
+                            <label for="nomeDisciplina">Nome da Disciplina</label>
+                            
+                          </div>
+                        </div>
+      
+                        <div class="d-flex flex-row align-items-center mb-4">
+                          <i class="fas fa-envelope fa-lg me-3 fa-fw"></i>
+                          <div data-mdb-input-init class="form-outline flex-fill mb-0">
+                            <input id="codigo" type="number" placeholder="Deve conter 3 digitos" class="form-control" name="codigo" required>
+                            <small id="erroCodigo" class="form-text text-danger"></small>
+                            <label for="codigo">Código da disciplina</label>
+                          </div>
+                        </div>
+      
+                        <div class="d-flex flex-row align-items-center mb-4">
+                          <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
+                          <div data-mdb-input-init class="form-outline flex-fill mb-0">
+                            <input id="professor" type="text" placeholder="Nome do professor" class="form-control" name="professor" required>
+                            <small id="erroProfessor" class="form-text text-danger"></small>
+                            <label for="professor">Nome do Professor</label>
+                          </div>
+                        </div>
+      
+                        <div class="d-flex flex-row align-items-center mb-4">
+                          <i class="fas fa-key fa-lg me-3 fa-fw"></i>
+                          <div data-mdb-input-init class="form-outline flex-fill mb-0">
+                            <input id="turmaCodigo" type="number" placeholder="Deve conter entre 4 e 6 digitos" class="form-control" name="turmaCodigo" required>
+                            <small id="erroTurmaC" class="form-text text-danger"></small>
+                            <label for="turmaCodigo">Turma</label>
+                          </div>
+                        </div>
+      
+    
+      
+                        <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
+                          <button  type="submit" class="btn btn-success btn-lg">Salvar</button>
+                        </div>
+      
+                      </form>
+      
+                    </div>
+                    <div class="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2">
+      
+                      <img src="/img/disciplina.png"
+                        class="img-fluid" alt="Sample image">
+      
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
-            <div class="card-body">
-                <form method="POST" action="/salvar/disciplina" id="formDisciplina">
-                    <label for="nomeDisciplina">Nome da Disciplina</label>
-                    <input id="nomeDisciplina" type="text" placeholder="Nome da Disciplina" class="form-control" name="nomeDisciplina" required>
-                    <small id="erroNomeD" class="form-text text-danger"></small>
-                    <br>
-                    <label for="codigo">Código da disciplina</label>
-                    <input id="codigo" type="number" placeholder="código da disciplina deve conter 3 digitos" class="form-control" name="codigo" required>
-                    <small id="erroCodigo" class="form-text text-danger"></small>
-                    <br>
-                    <label for="professor">Nome do Professor</label>
-                    <input id="professor" type="text" placeholder="Nome do professor" class="form-control" name="professor" required>
-                    <small id="erroProfessor" class="form-text text-danger"></small>
-                    <br>
-                    <label for="turmaCodigo">Turma</label>
-                    <input id="turmaCodigo" type="number" placeholder="Código da turma deve conter entre 4 e 6 digitos" class="form-control" name="turmaCodigo" required>
-                    <small id="erroTurmaC" class="form-text text-danger"></small>
-                    <br>
-                    <button type="submit" class="btn btn-success">Salvar</button>
-                </form>
-            </div>
+          </div>
         </div>
-    </div>
+      </section>
     
      <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
      <script src="/js/Validation.js"></script>

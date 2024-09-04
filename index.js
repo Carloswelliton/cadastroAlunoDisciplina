@@ -50,5 +50,9 @@ app.post("/salvar/disciplina", (req, res) => {
         disciplina: disciplina
     });
 })
-    
+
+app.get("/teste", (req, res) => {
+    res.render("teste");
+})
+
 app.listen(8080, ()=>{console.log("Runnnig server")});
