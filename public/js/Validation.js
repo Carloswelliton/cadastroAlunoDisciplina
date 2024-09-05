@@ -33,8 +33,8 @@ $(function(){
             const mesDiff = hoje.getMonth() - idadeNascimento.getMonth();
 
             if(mesDiff < 0 || (mesDiff === 0 && hoje.getDate() < idadeNascimento.getDate() && hoje.getDate > hoje.getDate)){
-                age--;
-                console.log("estou aqui")
+                idade--;
+                
             }
             if(idade < 17 || idade > 100){
                 $("#erroNascimento").text("O estudante deve ter no mínimo 17 anos");
@@ -42,6 +42,7 @@ $(function(){
             }
         }else{
             $("#erroNascimento").text("insira sua data de nascimento")
+            valid = false;
         }
 
         if(valid == false){

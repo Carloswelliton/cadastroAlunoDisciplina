@@ -27,13 +27,23 @@ app.post("/salvar/aluno", (req, res) => {
 
     const aluno = {
         nome: req.body.nome,
-        nascimento: req.body.nascimento,
+        //nascimento: req.body.nascimento,
         matricula: req.body.matricula,
         turma: req.body.turma
-
     }
+    const formatarData = (dataISO) => {
+        const [ano, mes, dia] = dataISO.split("-");
+        return `${dia}/${mes}/${ano}`;
+    }
+
+    const dataFormatada = formatarData(req.body.nascimento);
+    const dataNascimento = {
+        novaData: dataFormatada
+    }
+
     res.render("salvarAluno", {
-        aluno: aluno
+        aluno: aluno,
+        dataNascimento: dataNascimento
     })
 })
 
