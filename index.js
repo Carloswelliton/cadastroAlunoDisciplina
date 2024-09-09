@@ -23,7 +23,8 @@ app.get("/cadastrar/disciplina", (req, res)=>{
 
 app.post("/salvar/aluno", (req, res) => {
     const data = new Date();
-    const formatter = new Intl.DateTimeFormat("pt-br", {day: "2-digit", month: "2-digit", year: "numeric", hour: "numeric", minute: "numeric", second: "numeric", timeZoneName: "shortOffset"});
+    const formatter = new Intl.DateTimeFormat("pt-br", {
+        day: "2-digit", month: "2-digit", year: "numeric", hour: "numeric", minute: "numeric", second: "numeric", timeZoneName: "shortOffset"});
     const dataFor = formatter.format(data);
 
 
@@ -52,12 +53,14 @@ app.post("/salvar/aluno", (req, res) => {
 app.post("/salvar/disciplina", (req, res) => {
 
     const data = new Date();
+    const formatter = new Intl.DateTimeFormat("pt-br", {day: "2-digit", month: "2-digit", year: "numeric", hour: "numeric", minute: "numeric", second: "numeric", timeZoneName: "shortOffset"});
+    const dataFor = formatter.format(data); 
     const disciplina = {
         disciplina: req.body.nomeDisciplina,
         professor: req.body.professor,
         codigo: req.body.codigo,
         turmaCodigo: req.body.turmaCodigo,
-        data: data
+        data: dataFor
     }
 
     res.render("salvarDisciplina", {    
