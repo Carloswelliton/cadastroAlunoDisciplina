@@ -1,7 +1,6 @@
 const express = require("express");
 const app = express();
 const bodyParser = require("body-parser");
-var path = require('path');
 
 
 app.set('view engine', 'ejs');
@@ -24,12 +23,15 @@ app.get("/cadastrar/disciplina", (req, res)=>{
 
 app.post("/salvar/aluno", (req, res) => {
     const data = new Date();
+    const formatter = new Intl.DateTimeFormat("pt-br", {day: "2-digit", month: "2-digit", year: "numeric", hour: "numeric", minute: "numeric", second: "numeric", timeZoneName: "shortOffset"});
+    const dataFor = formatter.format(data);
+
 
     const aluno = {
         nome: req.body.nome,
         matricula: req.body.matricula,
         turma: req.body.turma,
-        data: data
+        data: dataFor
     }
     const formatarData = (dataISO) => {
         const [ano, mes, dia] = dataISO.split("-");
